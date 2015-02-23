@@ -2,7 +2,11 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /var/www/html/airandplumbing_com
+    destination: /var/www/html/airandplumbing.com
+permissions:
+  - object: /var/www/html/airandplumbing.com/html
+    pattern: "**"
+    mode: 777
 hooks:
   BeforeInstall:
     - location: scripts/install_dependencies.sh
