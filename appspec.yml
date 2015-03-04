@@ -10,6 +10,9 @@ permissions:
     group: apache
     mode: 777
 hooks:
+  BeforeInstall:
+    - location: scripts/remove_wp-config.sh
+       timeout: 180
    AfterInstall:
      - location: scripts/make_softlinks.sh 
        timeout: 180
