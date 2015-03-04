@@ -7,4 +7,5 @@ permissions:
   - object: /var/www/html/airandplumbing.com
     pattern: "**"
     owner: apache
+    group: apache
     mode: 777
