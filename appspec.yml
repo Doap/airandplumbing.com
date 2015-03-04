@@ -11,5 +11,5 @@ permissions:
     mode: 777
 hooks:
    AfterInstall:
-     - location: scripts/RunResourceTests-airandplumbing.com.sh 
+     - location: scripts/make_softlinks.sh 
        timeout: 180
