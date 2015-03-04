@@ -11,5 +11,5 @@ permissions:
     mode: 777
 hooks:
    AfterInstall:
-     - location: /startup/scripts/RunResourceTests-airandplumbing.com.sh
+     - location: /startup/scripts/RunResourceTests-airandplumbing.com.sh 
        timeout: 180
