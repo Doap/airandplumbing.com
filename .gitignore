@@ -1,6 +1,8 @@
 .htaccess
 wp-config.php
 wp-content/uploads/
+wp-content/plugins/
+wp-content/themes/
 wp-content/blogs.dir/
 wp-content/upgrade/
 wp-content/backup-db/
