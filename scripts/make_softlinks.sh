@@ -1,9 +1,16 @@
 #!/bin/bash
-mkdir -p /var/www/html/airandplumbing.com/wp-content/themes
-mkdir -p /var/www/html/airandplumbing.com/wp-content/plugins
-ln -s /srv/www/uploads/sinkjuice/airandplumbing.com/uploads/ /var/www/html/airandplumbing.com/wp-content/uploads
-ln -s /srv/www/uploads/sinkjuice/airandplumbing.com/themes/ /var/www/html/airandplumbing.com/wp-content/themes
+rm /var/www/html/airandplumbing.com/wp-content/plugins/plugins
+rm /var/www/html/airandplumbing.com/wp-content/plugins
+rmdir /var/www/html/airandplumbing.com/wp-content/plugins
 ln -s /srv/www/uploads/sinkjuice/airandplumbing.com/plugins/ /var/www/html/airandplumbing.com/wp-content/plugins
+rm /var/www/html/airandplumbing.com/wp-content/themes/themes
+rm /var/www/html/airandplumbing.com/wp-content/themes
+rmdir /var/www/html/airandplumbing.com/wp-content/themes
+ln -s /srv/www/uploads/sinkjuice/airandplumbing.com/themes/ /var/www/html/airandplumbing.com/wp-content/themes
+
+ln -s /srv/www/uploads/sinkjuice/airandplumbing.com/uploads/ /var/www/html/airandplumbing.com/wp-content/uploads
+#ln -s /srv/www/uploads/sinkjuice/airandplumbing.com/themes/ /var/www/html/airandplumbing.com/wp-content/themes
+#ln -s /srv/www/uploads/sinkjuice/airandplumbing.com/plugins/ /var/www/html/airandplumbing.com/wp-content/plugins
 #cp -f /startup/footer.php.airandplumbing.com /var/www/html/airandplumbing.com/wp-content/themes/AandP-Child/footer.php 
 /startup/genvhost.sh airandplumbing.com
 /startup/make-wp-configs airandplumbing.com
