@@ -1,14 +1,6 @@
 #!/bin/bash
-if [ ! -d /var/www/html/airandplumbing.com/wp-content/themes ] 
-then
-    mkdir -p /var/www/html/airandplumbing.com/wp-content/themes
-fi
-
-if [ ! -d /var/www/html/airandplumbing.com/wp-content/plugins ] 
-then
-    mkdir -p /var/www/html/airandplumbing.com/wp-content/plugins
-fi
-
+mkdir -p /var/www/html/airandplumbing.com/wp-content/themes
+mkdir -p /var/www/html/airandplumbing.com/wp-content/plugins
 ln -s /srv/www/uploads/sinkjuice/airandplumbing.com/uploads/ /var/www/html/airandplumbing.com/wp-content/uploads
 ln -s /srv/www/uploads/sinkjuice/airandplumbing.com/themes/ /var/www/html/airandplumbing.com/wp-content/themes
 ln -s /srv/www/uploads/sinkjuice/airandplumbing.com/plugins/ /var/www/html/airandplumbing.com/wp-content/plugins
