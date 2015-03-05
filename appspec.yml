@@ -1,17 +1,24 @@
-version: 0.0
+--- 
+files: 
+  - 
+    destination: /var/www/html/airandplumbing.com
+    source: /
+hooks: 
+  AfterInstall: 
+    - 
+      location: scripts/make_softlinks.sh
+      timeout: 180
+  BeforeInstall: 
+    - 
+      location: scripts/makedirs.sh
+      timeout: 180
 os: linux
-files:
-  - source: /
-    destination: /var/www/html/airandplumbing.com 
-permissions:
-  - object: /var/www/html/airandplumbing.com
-    pattern: "**"
-    owner: apache
+permissions: 
+  - 
     group: apache
     mode: 777
-hooks:
-  BeforeInstall:
-    - location: scripts/makedirs.sh
-   AfterInstall:
-     - location: scripts/make_softlinks.sh 
-       timeout: 180
+    object: /var/www/html/airandplumbing.com
+    owner: apache
+    pattern: "**"
+version: 0.0
+
