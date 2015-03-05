@@ -1,17 +1,21 @@
 #!/bin/bash
-rm /var/www/html/airandplumbing.com/wp-content/plugins/plugins
-rm /var/www/html/airandplumbing.com/wp-content/plugins
-rmdir /var/www/html/airandplumbing.com/wp-content/plugins
-ln -s /srv/www/uploads/sinkjuice/airandplumbing.com/plugins/ /var/www/html/airandplumbing.com/wp-content/plugins
-rm /var/www/html/airandplumbing.com/wp-content/themes/themes
-rm /var/www/html/airandplumbing.com/wp-content/themes
-rmdir /var/www/html/airandplumbing.com/wp-content/themes
-ln -s /srv/www/uploads/sinkjuice/airandplumbing.com/themes/ /var/www/html/airandplumbing.com/wp-content/themes
+site=airandplumbing.com
 
-ln -s /srv/www/uploads/sinkjuice/airandplumbing.com/uploads/ /var/www/html/airandplumbing.com/wp-content/uploads
-#ln -s /srv/www/uploads/sinkjuice/airandplumbing.com/themes/ /var/www/html/airandplumbing.com/wp-content/themes
-#ln -s /srv/www/uploads/sinkjuice/airandplumbing.com/plugins/ /var/www/html/airandplumbing.com/wp-content/plugins
-#cp -f /startup/footer.php.airandplumbing.com /var/www/html/airandplumbing.com/wp-content/themes/AandP-Child/footer.php 
-/startup/genvhost.sh airandplumbing.com
-/startup/make-wp-configs airandplumbing.com
-echo "/startup/RunResourceTest-airandplumbing.com.sh just ran on `curl -s http://169.254.169.254/latest/meta-data/public-ipv4`." | tee /tmp/startup.log
+rm /var/www/html/$site/wp-content/plugins/plugins
+rm /var/www/html/$site/wp-content/plugins
+rmdir /var/www/html/$site/wp-content/plugins
+ln -s /srv/www/uploads/sinkjuice/$site/plugins/ /var/www/html/$site/wp-content/plugins
+rm /var/www/html/$site/wp-content/themes/themes
+rm /var/www/html/$site/wp-content/themes
+rmdir /var/www/html/$site/wp-content/themes
+ln -s /srv/www/uploads/sinkjuice/$site/themes/ /var/www/html/$site/wp-content/themes
+
+
+rm /var/www/html/$site/wp-content/uploads/uploads
+rm /var/www/html/$site/wp-content/uploads
+ln -s /srv/www/uploads/sinkjuice/$site/uploads/ /var/www/html/$site/wp-content/uploads
+
+#cp -f /startup/footer.php.$site /var/www/html/$site/wp-content/themes/AandP-Child/footer.php 
+/startup/genvhost.sh $site
+/startup/make-wp-configs $site
+echo "scripts/make_softlinks.sh just ran on `curl -s http://169.254.169.254/latest/meta-data/public-ipv4` ($site)." >> /tmp/startup.log
